@@ -29,6 +29,22 @@ $ cordova platform add android
 # Remember to replace APP_ID and APP_NAME variables
 $ cordova -d plugin add /path/to/cloned/phonegap-facebook-plugin --variable APP_ID="123456789" --variable APP_NAME="myApplication"
 ```
+ 	Facebook SDK Android studio setup …
+
+After compilation of above setup follow the below steps to remove the Error in ConnectPlugin.java file. 
+
+1. In Androidmanifest.xml  of your project remove the facebook login activity.
+2. In build.gradle(Module:appname) 
+
+add dependencies:
+ dependencies {
+// Android SDK
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+    // Audience Network SDK. Only versions 4.6.0 and above are available
+    compile 'com.facebook.android:audience-network-sdk:4.+'
+    // SUB-PROJECT DEPENDENCIES END
+}
+It will add the facebook sdk to your App's dependencies.
 
 You can now use the plugin right away
 
